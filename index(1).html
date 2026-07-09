@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jagtar Singh | Senior Azure Data Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>
+(function(){
+ emailjs.init({publicKey:"rc9ujJOKfBuheJ_Wu"});
+})();
+</script>
+</head>
+<body>
+
+<header>
+<div class="logo">Jagtar Singh</div>
+<nav>
+<a href="#home">Home</a>
+<a href="#about">About</a>
+<a href="#skills">Skills</a>
+<a href="#experience">Experience</a>
+<a href="#contact">Contact</a>
+</nav>
+</header>
+
+<section id="home" class="hero">
+<div class="hero-left">
+<h3>Hello, I'm</h3>
+<h1>Jagtar Singh</h1>
+<h2>Senior Azure Data Engineer</h2>
+<p>Azure • Databricks • Azure Data Factory • PySpark • SQL • Power BI • Delta Lake • Azure DevOps</p>
+
+<div class="buttons">
+<a href="assets/Jagtar_Singh_Resume.pdf" class="btn" download><i class="fa fa-download"></i> Download Resume</a>
+<a href="#contact" class="btn btn-outline">Hire Me</a>
+</div>
+
+<div class="social">
+<a href="https://www.linkedin.com/in/jagtar1992/" target="_blank"><i class="fab fa-linkedin"></i></a>
+<a href="https://github.com/luckiylove" target="_blank"><i class="fab fa-github"></i></a>
+<a href="mailto:luckycider.singh@gmail.com"><i class="fas fa-envelope"></i></a>
+</div>
+</div>
+
+<div class="hero-right">
+<img src="assets/profile.jpg" alt="Jagtar Singh">
+</div>
+</section>
+
+<section id="about"><div class="container">
+<h2>About Me</h2>
+<p>Senior Azure Data Engineer with 7+ years of experience building enterprise-scale data platforms using Azure, Databricks, PySpark, Azure Data Factory, SQL and Power BI.</p>
+</div></section>
+
+<section id="skills"><div class="container">
+<h2>Skills</h2>
+<div class="skills-grid">
+<div class="card">Azure</div><div class="card">Databricks</div><div class="card">PySpark</div><div class="card">ADF</div><div class="card">SQL</div><div class="card">Power BI</div>
+</div>
+</div></section>
+
+<section id="experience"><div class="container">
+<h2>Experience</h2>
+<div class="timeline">
+<div class="timeline-item"><h3>Protiviti</h3><span>Senior Data Engineer (2021-Present)</span></div>
+<div class="timeline-item"><h3>Opallios</h3><span>Data Engineer</span></div>
+<div class="timeline-item"><h3>Auritas</h3><span>Power BI Developer</span></div>
+</div></div></section>
+
+<section id="contact">
+<div class="container">
+<h2>Contact Me</h2>
+<form id="contact-form">
+<input type="text" id="from_name" placeholder="Your Name" required>
+<input type="email" id="from_email" placeholder="Your Email" required>
+<textarea id="message" rows="6" placeholder="Your Message" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+<p id="status"></p>
+</div>
+</section>
+
+<script>
+document.getElementById("contact-form").addEventListener("submit",function(e){
+e.preventDefault();
+const status=document.getElementById("status");
+status.textContent="Sending...";
+emailjs.send("service_0gfhpsu","template_51jhule",{
+from_name:document.getElementById("from_name").value,
+from_email:document.getElementById("from_email").value,
+message:document.getElementById("message").value
+}).then(()=>{
+status.style.color="lightgreen";
+status.textContent="Message sent successfully!";
+this.reset();
+}).catch(err=>{
+console.error(err);
+status.style.color="red";
+status.textContent="Failed to send. Check your EmailJS template variable names.";
+});
+});
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
